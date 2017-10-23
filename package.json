@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/lwk520/webpack-study/issues"
   },
-  "homepage": "https://github.com/lwk520/webpack-study#readme"
+  "homepage": "https://github.com/lwk520/webpack-study#readme",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
 }
