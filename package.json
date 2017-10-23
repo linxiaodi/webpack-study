@@ -1,0 +1,24 @@
+{
+  "name": "webpack-study",
+  "version": "1.0.0",
+  "description": "This is a store for reviewing webpack .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwk520/webpack-study.git"
+  },
+  "keywords": [
+    "review",
+    "webpack",
+    "webpack-dev-server"
+  ],
+  "author": "lwk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lwk520/webpack-study/issues"
+  },
+  "homepage": "https://github.com/lwk520/webpack-study#readme"
+}
