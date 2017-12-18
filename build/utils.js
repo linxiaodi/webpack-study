@@ -15,7 +15,6 @@ const entries = function(){
   })
   return map
 }
-entries()
 
 module.exports={
   entries
