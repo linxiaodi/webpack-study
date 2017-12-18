@@ -1,5 +1,6 @@
 const path = require('path')
 const glob = require('glob')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PAGE_PATH = path.resolve(__dirname,'../src/pages/')
 
 const entries = function(){
@@ -16,6 +17,23 @@ const entries = function(){
   return map
 }
 
+const htmlPlugins=function(){
+  let entryHtml = glob.sync(PAGE_PATH+'/*/*.html')
+  let arr = []
+  entryHtml.forEach(filePath=>{
+    let filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+    let conf = {
+      filename:filename+'.html',
+      template:path.resolve(PAGE_PATH,filename+'/'+filename+'.html'),
+      chunks:[filename],
+      inject:true,
+    }
+    arr.push(new HtmlWebpackPlugin(conf))
+  })
+  return arr
+}
+
 module.exports={
-  entries
+  entries,
+  htmlPlugins
 }

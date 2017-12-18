@@ -37,5 +37,5 @@ module.exports={
   plugins:[
     new CleanWebpackPlugin(),
     new ExtractTextWebpackPlugin('css/[name].css')
-  ]
+  ].concat(utils.htmlPlugins())
 }
