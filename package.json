@@ -4,7 +4,8 @@
   "description": "This is a store for reviewing webpack .",
   "main": "index.js",
   "scripts": {
-    "build": "node ./build/build.js"
+    "build": "node ./build/build.js",
+    "dev": "webpack-dev-server --config ./build/dev.js --inline"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
 }

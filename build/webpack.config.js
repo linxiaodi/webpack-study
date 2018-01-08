@@ -1,22 +1,22 @@
 const utils = require('./utils')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+
 module.exports={
   entry:utils.entries(),
   output:{
-    filename:'[name].js',
-    path:path.resolve(__dirname,'../dist')
+    filename:'js/[name].js',
+    path:path.resolve(__dirname,'../dist'),
+    publicPath: '/'
+  },
+  resolve: {
+    alias: {
+      'js': path.resolve(__dirname, '../src/modules/js')
+    },
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback:'style-loader',
-          use:'css-loader'
-        })
-      },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: [
@@ -36,6 +36,5 @@ module.exports={
   },
   plugins:[
     new CleanWebpackPlugin(),
-    new ExtractTextWebpackPlugin('css/[name].css')
   ].concat(utils.htmlPlugins())
 }

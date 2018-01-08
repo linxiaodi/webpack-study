@@ -2,5 +2,14 @@ body{
   padding: 0;
   margin: 0;
   color: #000;
-  background: url('../../assets/cat.jpeg');
+  background: url('../../assets/cat.jpeg') no-repeat;
+}
+
+h1{
+  color: #fff;
+}
+
+
+*{
+  color: #fff;
 }
