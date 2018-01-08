@@ -1,0 +1,13 @@
+@import '../../modules/css/utils.scss';
+
+.border{
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ddd;
+  .car{
+    background: url(http://oph3rwqhn.bkt.clouddn.com/17-11-20/49809076.jpg) no-repeat;
+    width:  $width;
+    height:  100px;
+    background-size: contain;
+  }
+}

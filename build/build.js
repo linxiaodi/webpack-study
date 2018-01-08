@@ -11,7 +11,14 @@ const config = merge(baseConfig, {
         test: /\.css$/,
         use: ExtractTextWebpackPlugin.extract({
           fallback:'style-loader',
-          use:'css-loader'
+          use: ['css-loader', 'postcss-loader']
+        })
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader', 'sass-loader']
         })
       }
     ],

@@ -3,6 +3,10 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack')
 
+const resolve = (t) => {
+  return path.resolve(__dirname, t)
+}
+
 module.exports={
   entry:utils.entries(),
   output:{
@@ -12,7 +16,9 @@ module.exports={
   },
   resolve: {
     alias: {
-      'js': path.resolve(__dirname, '../src/modules/js')
+      '@':'../src/',
+      'js': resolve('../src/modules/js'),
+      'css': resolve('../src/modules/css')
     },
   },
   module: {
