@@ -25,7 +25,7 @@ const htmlPlugins=function(){
     let conf = {
       filename:filename+'.html',
       template:path.resolve(PAGE_PATH,filename+'/'+filename+'.html'),
-      chunks:[filename, 'common'],
+      chunks:['common', filename],
       inject:true,
     }
     arr.push(new HtmlWebpackPlugin(conf))

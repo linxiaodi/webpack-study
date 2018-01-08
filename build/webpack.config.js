@@ -24,6 +24,11 @@ module.exports={
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: 'babel-loader',
+        include:[resolve('../src')]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: [
           {

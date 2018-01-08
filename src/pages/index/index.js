@@ -1,7 +1,5 @@
 import './index.css'
-import 'underscore'
 import 'js/common.js'
-import fn from 'js/test.js'
 const a = 2
 console.log(a)
 const p = function(){
@@ -10,5 +8,7 @@ const p = function(){
 p()
 const c = 1000
 console.log(c)
-
+const fn = () => {
+  console.log(this)
+}
 fn()
