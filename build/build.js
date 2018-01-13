@@ -5,6 +5,7 @@ const utils = require('./utils')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 const config = merge(baseConfig, {
+  devtool: '#source-map',
   module: {
     rules: [
       {
@@ -24,11 +25,6 @@ const config = merge(baseConfig, {
     ],
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common/[name].bundle.js',
-      minChunks: utils.htmlPlugins().length
-    }),
     new ExtractTextWebpackPlugin('css/[name].css')
   ]
 })

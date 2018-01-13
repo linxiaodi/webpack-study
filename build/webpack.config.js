@@ -8,7 +8,9 @@ const resolve = (t) => {
 }
 
 module.exports={
-  entry:utils.entries(),
+  entry:Object.assign(utils.entries(), {
+    common: 'underscore'
+  }),
   output:{
     filename:'js/[name].js',
     path:path.resolve(__dirname,'../dist'),
@@ -47,5 +49,10 @@ module.exports={
   },
   plugins:[
     new CleanWebpackPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'js/[name].bundle.js',
+      minChunks: utils.htmlPlugins().length
+    }),
   ].concat(utils.htmlPlugins())
 }

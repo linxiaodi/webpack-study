@@ -15,6 +15,7 @@ const config = merge(baseConfig, {
     ]
   },
   // https://segmentfault.com/a/1190000004280859 devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: '/',
     // 监听的端口
